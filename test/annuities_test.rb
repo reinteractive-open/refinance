@@ -5,8 +5,7 @@ require 'refinance'
 class AnnuitiesTest < MiniTest::Unit::TestCase
 
   def test_improve_interest_rate
-    # Based on Example 6 in
-    # http://oakroadsystems.com/math/loan.htm .
+    # Based on Example 6 in http://oakroadsystems.com/math/loan.htm .
     payment = BigDecimal.new('291')
     periods = BigDecimal.new('48')
     principal = BigDecimal.new('11200')
@@ -20,8 +19,7 @@ class AnnuitiesTest < MiniTest::Unit::TestCase
   end
 
   def test_interest_rate_stops_if_improvement_is_small
-    # Based on Example 6 in
-    # http://oakroadsystems.com/math/loan.htm .
+    # Based on Example 6 in http://oakroadsystems.com/math/loan.htm .
     payment = BigDecimal.new('291')
     periods = BigDecimal.new('48')
     principal = BigDecimal.new('11200')
@@ -47,8 +45,7 @@ class AnnuitiesTest < MiniTest::Unit::TestCase
   end
 
   def test_interest_rate_does_multiple_iterations
-    # Based on Example 6 in
-    # http://oakroadsystems.com/math/loan.htm .
+    # Based on Example 6 in http://oakroadsystems.com/math/loan.htm .
     payment = BigDecimal.new('291')
     periods = BigDecimal.new('48')
     principal = BigDecimal.new('11200')
@@ -64,8 +61,7 @@ class AnnuitiesTest < MiniTest::Unit::TestCase
   end
 
   def test_payment
-    # Based on Example 2 in
-    # http://oakroadsystems.com/math/loan.htm .
+    # Based on Example 2 in http://oakroadsystems.com/math/loan.htm .
     interest_rate = BigDecimal.new('0.0065')
     periods = BigDecimal.new('360')
     principal = BigDecimal.new('225000')
@@ -77,8 +73,7 @@ class AnnuitiesTest < MiniTest::Unit::TestCase
   end
 
   def test_periods
-    # Based on Example 3 in
-    # http://oakroadsystems.com/math/loan.htm .
+    # Based on Example 3 in http://oakroadsystems.com/math/loan.htm .
     interest_rate = BigDecimal.new('0.005')
     payment = BigDecimal.new('100')
     principal = BigDecimal.new('3500')
@@ -90,8 +85,7 @@ class AnnuitiesTest < MiniTest::Unit::TestCase
   end
 
   def test_principal
-    # Based on Example 5 in
-    # http://oakroadsystems.com/math/loan.htm .
+    # Based on Example 5 in http://oakroadsystems.com/math/loan.htm .
     interest_rate = BigDecimal.new('0.014083')
     payment = BigDecimal.new('60')
     periods = BigDecimal.new('36')
