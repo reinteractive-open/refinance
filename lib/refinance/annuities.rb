@@ -33,26 +33,26 @@ module Refinance
     end
 
     def self.payment(interest_rate, periods, principal)
-      interest = BigDecimal.new(interest_rate)
-      periods = BigDecimal.new(periods)
-      principal = BigDecimal.new(principal)
+      interest = BigDecimal.new(interest_rate, 0)
+      periods = BigDecimal.new(periods, 0)
+      principal = BigDecimal.new(principal, 0)
 
       (interest_rate * principal) / (1 - ((interest_rate + 1) ** -periods))
     end
 
     def self.periods(interest_rate, payment, principal)
-      interest_rate = BigDecimal.new(interest_rate)
-      payment = BigDecimal.new(payment)
-      principal = BigDecimal.new(principal)
+      interest_rate = BigDecimal.new(interest_rate, 0)
+      payment = BigDecimal.new(payment, 0)
+      principal = BigDecimal.new(principal, 0)
 
       -Math.log(1 - ((interest_rate * principal) / payment)) /
         Math.log(interest_rate + 1)
     end
 
     def self.principal(interest_rate, payment, periods)
-      interest_rate = BigDecimal.new(interest_rate)
-      payment = BigDecimal.new(payment)
-      periods = BigDecimal.new(periods)
+      interest_rate = BigDecimal.new(interest_rate, 0)
+      payment = BigDecimal.new(payment, 0)
+      periods = BigDecimal.new(periods, 0)
 
       (payment / interest_rate) * (1 - ((interest_rate + 1) ** -periods))
     end
