@@ -106,5 +106,13 @@ module Refinance
 
       (payment / interest_rate) * (1 - ((interest_rate + 1) ** -periods))
     end
+
+    def self.effective_interest_rate(nominal_annual_interest_rate,
+      compounding_periods_per_year)
+      nair = BigDecimal.new(nominal_annual_interest_rate, 0)
+      cppy = BigDecimal.new(compounding_periods_per_year, 0)
+
+      (((nair / cppy) + 1) ** cppy) - 1
+    end
   end
 end

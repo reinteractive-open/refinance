@@ -95,4 +95,15 @@ class AnnuitiesTest < MiniTest::Unit::TestCase
 
     assert_in_delta expected, actual, BigDecimal.new('0.01')
   end
+
+  def test_effective_interest_rate
+    nominal_annual_interest_rate = BigDecimal.new('0.1')
+    compounding_periods_per_year = BigDecimal.new('12')
+
+    expected = BigDecimal.new('0.10471')
+    actual = Refinance::Annuities.effective_interest_rate(
+      nominal_annual_interest_rate, compounding_periods_per_year)
+
+    assert_in_delta expected, actual, BigDecimal.new('0.00001')
+  end
 end
