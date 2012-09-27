@@ -1,5 +1,3 @@
-require 'bigdecimal'
-
 module Refinance
 
   ##
@@ -7,9 +5,9 @@ module Refinance
   # annuities. Annuities are assumed to be an annuities immediate (that is,
   # interest is accumulated before the payment).
   #
-  # These methods convert most arguments to BigDecimal by passing them to
-  # +BigDecimal.new+. This means you can pass in numbers in many different
-  # forms: Integer, Float, Rational, BigDecimal, or String.
+  # The floating-point numbers you pass in as arguments can be instances of
+  # Float or BigDecimal. Actually, thanks to duck typing, they can be any
+  # objects that support the necessary operations.
   #
   module Annuities
 
@@ -27,16 +25,9 @@ module Refinance
     # is the maximum number of iterations that will be attempted. It will stop
     # iterating if the last improvement was less than _precision_ in magnitude.
     #
-    def self.interest_rate(payment, periods, principal,
-      initial_guess = BigDecimal.new('0.1'),
-      precision = BigDecimal.new('0.0001'), max_decimals = 8,
-      max_iterations = 10)
-
-      payment = BigDecimal.new(payment, 0)
-      periods = BigDecimal.new(periods, 0)
-      principal = BigDecimal.new(principal, 0)
-      guess = BigDecimal.new(initial_guess, 0)
-      precision = BigDecimal.new(precision, 0)
+    def self.interest_rate(payment, periods, principal, initial_guess = 0.1,
+      precision = 0.0001, max_decimals = 8, max_iterations = 10)
+      guess = initial_guess
 
       max_iterations.times do
         new_guess = improve_interest_rate(payment, periods, principal, guess).
@@ -69,10 +60,6 @@ module Refinance
     # * Principal
     #
     def self.payment(interest_rate, periods, principal)
-      interest = BigDecimal.new(interest_rate, 0)
-      periods = BigDecimal.new(periods, 0)
-      principal = BigDecimal.new(principal, 0)
-
       (interest_rate * principal) / (1 - ((interest_rate + 1) ** -periods))
     end
 
@@ -84,10 +71,6 @@ module Refinance
     # * Principal
     #
     def self.periods(interest_rate, payment, principal)
-      interest_rate = BigDecimal.new(interest_rate, 0)
-      payment = BigDecimal.new(payment, 0)
-      principal = BigDecimal.new(principal, 0)
-
       -Math.log(1 - ((interest_rate * principal) / payment)) /
         Math.log(interest_rate + 1)
     end
@@ -100,10 +83,6 @@ module Refinance
     # * Number of payment periods
     #
     def self.principal(interest_rate, payment, periods)
-      interest_rate = BigDecimal.new(interest_rate, 0)
-      payment = BigDecimal.new(payment, 0)
-      periods = BigDecimal.new(periods, 0)
-
       (payment / interest_rate) * (1 - ((interest_rate + 1) ** -periods))
     end
 
@@ -113,11 +92,7 @@ module Refinance
     # * The nominal annual interest rate
     # * The number of compounding periods per year
     #
-    def self.effective_interest_rate(nominal_annual_interest_rate,
-      compounding_periods_per_year)
-      nair = BigDecimal.new(nominal_annual_interest_rate, 0)
-      cppy = BigDecimal.new(compounding_periods_per_year, 0)
-
+    def self.effective_interest_rate(nair, cppy)
       (((nair / cppy) + 1) ** cppy) - 1
     end
   end

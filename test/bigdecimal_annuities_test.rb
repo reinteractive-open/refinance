@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'bigdecimal'
 require 'refinance'
 
-class AnnuitiesTest < MiniTest::Unit::TestCase
+class BigDecimalAnnuitiesTest < MiniTest::Unit::TestCase
 
   def test_improve_interest_rate
     # Based on Example 6 in http://oakroadsystems.com/math/loan.htm .

@@ -12,7 +12,8 @@ payment). There are many opportunities for extension and improvement.
 
 ## Requirements
 
-This library requires Ruby 1.9.3 or newer.
+This library requires Ruby 1.9.3 or newer. (However, it will work with Ruby
+1.9.2 if you only use Float, not BigDecimal, for floating-point values.)
 
 ## Installation
 
