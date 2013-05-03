@@ -12,8 +12,9 @@ payment). There are many opportunities for extension and improvement.
 
 ## Requirements
 
-This library requires Ruby 1.9.3 or newer. (However, it will work with Ruby
-1.9.2 if you only use Float, not BigDecimal, for floating-point values.)
+This library is tested with versions 1.9.3 and 2.0.0 of MRI (Matz's Ruby
+Interpreter). It also works with version 1.9.2 if you only use Float, not
+BigDecimal, for floating-point values.
 
 ## Installation
 
