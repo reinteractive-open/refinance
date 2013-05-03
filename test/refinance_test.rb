@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'refinance'
+require 'test_helper'
 
 class RefinanceTest < MiniTest::Unit::TestCase
   def test_refinance_is_a_module

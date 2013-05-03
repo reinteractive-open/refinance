@@ -1,6 +1,5 @@
-require 'minitest/autorun'
+require 'test_helper'
 require 'bigdecimal'
-require 'refinance'
 
 class BigDecimalAnnuitiesTest < MiniTest::Unit::TestCase
 

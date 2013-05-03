@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require 'refinance'
+require 'test_helper'
 
 class FloatAnnuitiesTest < MiniTest::Unit::TestCase
 
