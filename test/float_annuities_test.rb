@@ -25,6 +25,7 @@ class FloatAnnuitiesTest < AnnuitiesTest
   end
 
   def test_payment
+    # Based on Example 2 in http://oakroadsystems.com/math/loan.htm .
     assert_payment interest_rate: 0.0065, periods: 360.0, principal: 225000.0,
       expected: 1619.708627, delta: 0.000001
   end
