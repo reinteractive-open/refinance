@@ -5,10 +5,11 @@ Currently, it contains algorithms for calculating the properties of ordinary
 annuities: principal, interest rate, number of payment periods, and payment
 amount.
 
-The algorithms are simple rather than fast. At present, they deal only with
-_annuities immediate_ (in which the interest is accumulated _before_ the
-payment), not _annuities due_ (in which the interest is accumulated _after_ the
-payment). There are many opportunities for extension and improvement.
+The algorithms are simple rather than fast and numerically robust. Thanks to
+duck typing, they work with both BigDecimals and Floats. At present, they deal
+only with _annuities immediate_ (in which the interest is accumulated _before_
+the payment), not _annuities due_ (in which the interest is accumulated _after_
+the payment). There are many opportunities for extension and improvement.
 
 ## Requirements
 
