@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FloatAnnuitiesTest < MiniTest::Unit::TestCase
+class FloatAnnuitiesTest < Minitest::Unit::TestCase
 
   def test_improve_interest_rate
     # Based on Example 6 in http://oakroadsystems.com/math/loan.htm .

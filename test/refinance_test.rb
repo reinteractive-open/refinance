@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RefinanceTest < MiniTest::Unit::TestCase
+class RefinanceTest < Minitest::Unit::TestCase
   def test_refinance_is_a_module
     assert_kind_of Module, ::Refinance
   end

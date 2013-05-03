@@ -1,7 +1,7 @@
 require 'test_helper'
 require 'bigdecimal'
 
-class BigDecimalAnnuitiesTest < MiniTest::Unit::TestCase
+class BigDecimalAnnuitiesTest < Minitest::Unit::TestCase
 
   def test_improve_interest_rate
     # Based on Example 6 in http://oakroadsystems.com/math/loan.htm .
