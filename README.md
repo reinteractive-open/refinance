@@ -77,7 +77,7 @@ $1,619.71.
 
 In the example above, I passed floats as the arguments. The annuity methods do
 not directly convert their arguments to floats, BigDecimals, or anything else;
-they use duck typing, so you can pass any object you want, as long as they
+they use duck typing, so you can pass any objects you want, as long as they
 implement the necessary mathematical methods. BigDecimals will work fine in
 Ruby 1.9.3 and later.
 
