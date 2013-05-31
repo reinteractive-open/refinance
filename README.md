@@ -55,7 +55,7 @@ I'll use [Example 2 from Stan Brown's paper](http://oakroadsystems.com/math/loan
 
 We want to calculate the monthly payment, so we'll use the method
 Refinance::Annuities.payment. That method requires three arguments: the
-interest rate (*per month*, since we're calculating the monthly payment), the
+interest rate (per month, since we're calculating the monthly payment), the
 total number of monthly payments, and the principal. These are easy to
 determine from the example:
 
