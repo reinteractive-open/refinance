@@ -67,7 +67,7 @@ the loan's principal will be 250000 * 0.9, or 225000.
 
 Now we can call the method:
 
-  Refinance::Annuities.payment 0.0065, 360.0, 225000.0
+    Refinance::Annuities.payment 0.0065, 360.0, 225000.0
 
 (You can name the arguments "interest rate", "periods", and "principal". For
 this and related methods, the arguments go in alphabetical order.)
