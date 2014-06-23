@@ -1,6 +1,7 @@
 require 'test_helper'
 
-class FloatAnnuitiesTest < AnnuitiesTest
+class FloatAnnuitiesTest < Minitest::Test
+  include AnnuitiesHelper
 
   def test_improve_interest_rate
     # Based on Example 6 in http://oakroadsystems.com/math/loan.htm .
@@ -22,6 +23,13 @@ class FloatAnnuitiesTest < AnnuitiesTest
       periods: 48.0, principal: 11200.0, guess: 0.01, precision: 0.0,
       max_decimals: 10, max_iterations: 4, expected: 0.0094007411,
       delta: 0.0000000001
+  end
+
+  def test_interest_rate_stops_if_max_iterations_reached
+    expected = 0.42
+    actual = Refinance::Annuities.interest_rate(0, 0, 0, expected, 0, 1, 0)
+
+    assert_equal expected, actual
   end
 
   def test_payment

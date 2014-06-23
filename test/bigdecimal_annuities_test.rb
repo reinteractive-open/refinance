@@ -1,7 +1,8 @@
 require 'test_helper'
 require 'bigdecimal'
 
-class BigDecimalAnnuitiesTest < AnnuitiesTest
+class BigDecimalAnnuitiesTest < Minitest::Test
+  include AnnuitiesHelper
 
   def test_improve_interest_rate
     # Based on Example 6 in http://oakroadsystems.com/math/loan.htm .
@@ -29,6 +30,13 @@ class BigDecimalAnnuitiesTest < AnnuitiesTest
       precision: BigDecimal.new('0'), max_decimals: 10, max_iterations: 4,
       expected: BigDecimal.new('0.0094007411'),
       delta: BigDecimal.new('0.0000000001')
+  end
+
+  def test_interest_rate_stops_if_max_iterations_reached
+    expected = BigDecimal.new('0.42')
+    actual = Refinance::Annuities.interest_rate(0, 0, 0, expected, 0, 1, 0)
+
+    assert_equal expected, actual
   end
 
   def test_payment
