@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'refinance'
 
-class AnnuitiesTest < Minitest::Unit::TestCase
+class AnnuitiesTest < Minitest::Test
   def assert_improve_interest_rate options
     actual = Refinance::Annuities.improve_interest_rate(
       options.fetch(:payment),
