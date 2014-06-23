@@ -169,9 +169,13 @@ is accumulated _after_ the payment).
 
 ## Requirements
 
-This library is tested with versions 1.9.3 and 2.0.0 of MRI (Matz's Ruby
-Interpreter). It also works with version 1.9.2 if you only use Float, not
-BigDecimal, for floating-point values.
+This library is tested with the following versions of MRI (Matz's Ruby
+Interpreter): 1.9.3, 2.0.0, 2.1.0, 2.1.1, and 2.1.2.
+
+If you wish you to use BigDecimal, we recommend using the
+[bigdecimal gem](https://rubygems.org/gems/bigdecimal) instead of the version
+of BigDecimal that ships in the standard library. Refinance's test suite does
+not pass with the version of BigDecimal that ships with MRI 2.1.0.
 
 
 ## Installation

@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'bigdecimal'
 
 class BigDecimalAnnuitiesTest < Minitest::Test
   include AnnuitiesHelper
