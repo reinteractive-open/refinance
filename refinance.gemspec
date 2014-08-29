@@ -6,7 +6,7 @@ require 'refinance/version'
 Gem::Specification.new do |spec|
   spec.name = 'refinance'
   spec.version = Refinance::VERSION
-  spec.author = 'reInteractive'
+  spec.author = 'Reinteractive'
   spec.email = 'enquiries@reinteractive.net'
   spec.description = %q{A collection of finance algorithms related to annuities.}
   spec.summary = %q{Simple annuity algorithms}
