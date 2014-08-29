@@ -204,7 +204,7 @@ Or install it yourself as:
 
 ## Authorship and copyright information
 
-This software was written by [reInteractive](http://reinteractive.net/), a
+This software was written by [Reinteractive](http://reinteractive.net/), a
 software consulting company in Sydney, Australia. It is distributed under the
 MIT License; see LICENSE.txt for details.
 
